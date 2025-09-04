@@ -476,7 +476,6 @@ renderRecent([
   { title: "Dune: Parte Dos",  genre: "drama",  image: "./media/imagen/dune2.webp",       description: "Paul y los Fremen cambian el destino de Arrakis.", type:"movie" },
   { title: "Furiosa",          genre: "action", image: "./media/imagen/furiosa.jpg",      description: "La leyenda del Wasteland antes de Mad Max.", type:"movie" },
   { title: "Wonka",            genre: "comedy", image: "./media/imagen/wonka.jpg",        description: "El origen del chocolatero más famoso.", type:"movie" },
-  { title: "Oppenheimer",      genre: "drama",  image: "./media/imagen/oppenheimer.jpg",  description: "El proyecto Manhattan y sus dilemas.", type:"movie" },
   { title: "The Batman",       genre: "action", image: "./media/imagen/thebatman.jpg",    description: "Un detective oscuro acecha Gotham.", type:"movie" }
 ]);
 
