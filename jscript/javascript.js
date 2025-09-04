@@ -8,7 +8,7 @@
 const TMDB_KEY = '12ea9e45f784893cdfa6d81381617e33';
 const TMDB = 'https://api.themoviedb.org/3';
 const IMG = (path, size = 'w342') =>
-  path ? `https://image.tmdb.org/t/p/${size}${path}` : '../media/imagen/placeholder.jpg';
+  path ? `https://image.tmdb.org/t/p/${size}${path}` : './media/imagen/placeholder.jpg';
 
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -64,23 +64,23 @@ const adaptTMDB = (item, type) => ({
    3) LOCAL DATA (fallback)
 --------------------------------- */
 const moviesLocal = [
-  { title: "Top Gun",    genre: "action", image: "../media/imagen/topgun.jpg",      description: "Tom Cruise vuelve a subirse en un avion esta vez para enseñar", type: "movie" },
-  { title: "Spider-man", genre: "action", image: "../media/imagen/spiderman.jpg",   description: "El hombre araña convertido en heroe", type: "movie" },
-  { title: "Titanic",    genre: "drama",  image: "../media/imagen/titanic.jpg",     description: "Una historia de amor trágica a bordo del famoso transatlántico.", type: "movie" },
-  { title: "Avengers",   genre: "action", image: "../media/imagen/avengers.webp",   description: "Los héroes más poderosos de la Tierra se unen para salvar el planeta.", type: "movie" },
-  { title: "Deadpool",   genre: "comedy", image: "../media/imagen/deadpool.webp",   description: "Un mercenario con un sentido del humor único busca venganza.", type: "movie" }
+  { title: "Top Gun",    genre: "action", image: "./media/imagen/topgun.jpg",      description: "Tom Cruise vuelve a subirse en un avión, esta vez para enseñar.", type: "movie" },
+  { title: "Spider-man", genre: "action", image: "./media/imagen/spiderman.jpg",   description: "El hombre araña convertido en héroe.", type: "movie" },
+  { title: "Titanic",    genre: "drama",  image: "./media/imagen/titanic.jpg",     description: "Una historia de amor trágica a bordo del famoso transatlántico.", type: "movie" },
+  { title: "Avengers",   genre: "action", image: "./media/imagen/avengers.webp",   description: "Los héroes más poderosos de la Tierra se unen para salvar el planeta.", type: "movie" },
+  { title: "Deadpool",   genre: "comedy", image: "./media/imagen/deadpool.webp",   description: "Un mercenario con un sentido del humor único busca venganza.", type: "movie" }
 ];
 const seriesLocal = [
-  { title: "Stranger Things", genre: "drama",  image: "../media/imagen/strangerthings.jpg", description: "Un grupo de amigos descubre un mundo alterno y algo más.", type: "series" },
-  { title: "The Witcher",     genre: "action", image: "../media/imagen/thewitcher.jpg",      description: "Geralt caza monstruos mientras lidia con su destino.", type: "series" },
-  { title: "Lupin",           genre: "drama",  image: "../media/imagen/lupin.jpg",           description: "Un ladrón caballeroso inspirado por Arsène Lupin.", type: "series" },
-  { title: "Wednesday",       genre: "comedy", image: "../media/imagen/wednesday.jpg",       description: "Miércoles Addams en la Academia Nunca Más.", type: "series" },
-  { title: "Dragon Ball",     genre: "action", image: "../media/imagen/dragonball.jpg",      description: "Goku aterriza en la Tierra. Un Super Saiyan.", type: "series" },
-  { title: "Breaking Bad",    genre: "drama",  image: "../media/imagen/breakingbad.WEBP",    description: "Walter White pasa de profesor de química a fabricante de metanfetamina.", type: "series" },
-  { title: "Game of Thrones", genre: "drama",  image: "../media/imagen/gameofthrones.jpg",   description: "Nobles familias luchan por el Trono de Hierro en Poniente.", type: "series" },
-  { title: "The Mandalorian", genre: "action", image: "../media/imagen/mandalorian.jpg",     description: "Un cazarrecompensas explora la galaxia tras la caída del Imperio.", type: "series" },
-  { title: "Dark",            genre: "drama",  image: "../media/imagen/dark.jpg",            description: "Cuatro familias en un pueblo alemán descubren secretos y viajes en el tiempo.", type: "series" },
-  { title: "Peaky Blinders",  genre: "drama",  image: "../media/imagen/peakyblinders.jpg",   description: "La familia Shelby construye un imperio criminal en Birmingham.", type: "series" }
+  { title: "Stranger Things", genre: "drama",  image: "./media/imagen/strangerthings.jpg", description: "Un grupo de amigos descubre un mundo alterno y algo más.", type: "series" },
+  { title: "The Witcher",     genre: "action", image: "./media/imagen/thewitcher.jpg",      description: "Geralt caza monstruos mientras lidia con su destino.", type: "series" },
+  { title: "Lupin",           genre: "drama",  image: "./media/imagen/lupin.jpg",           description: "Un ladrón caballeroso inspirado por Arsène Lupin.", type: "series" },
+  { title: "Wednesday",       genre: "comedy", image: "./media/imagen/wednesday.jpg",       description: "Miércoles Addams en la Academia Nunca Más.", type: "series" },
+  { title: "Dragon Ball",     genre: "action", image: "./media/imagen/dragonball.jpg",      description: "Goku aterriza en la Tierra. Un Super Saiyan.", type: "series" },
+  { title: "Breaking Bad",    genre: "drama",  image: "./media/imagen/breakingbad.webp",    description: "Walter White pasa de profesor de química a fabricante de metanfetamina.", type: "series" },
+  { title: "Game of Thrones", genre: "drama",  image: "./media/imagen/gameofthrones.jpg",   description: "Nobles familias luchan por el Trono de Hierro en Poniente.", type: "series" },
+  { title: "The Mandalorian", genre: "action", image: "./media/imagen/mandalorian.jpg",     description: "Un cazarrecompensas explora la galaxia tras la caída del Imperio.", type: "series" },
+  { title: "Dark",            genre: "drama",  image: "./media/imagen/dark.jpg",            description: "Cuatro familias descubren secretos y viajes en el tiempo.", type: "series" },
+  { title: "Peaky Blinders",  genre: "drama",  image: "./media/imagen/peakyblinders.jpg",   description: "La familia Shelby construye un imperio criminal en Birmingham.", type: "series" }
 ];
 
 let CATALOG = [...moviesLocal, ...seriesLocal];
@@ -378,7 +378,7 @@ const searchDialog    = $('#search-dialog');
 const searchCloseBtn  = searchDialog ? $('.search-close-btn', searchDialog) : null;
 const searchInput     = searchDialog ? $('#search-input', searchDialog) : null;
 
-// Asegura la lupa SVG que hereda color (blanco en oscuro / negro en claro)
+// Lupa SVG (hereda color)
 (() => {
   const btn = document.getElementById('search-btn');
   if (btn) {
@@ -473,14 +473,14 @@ function renderRecent(list) {
   recentGrid.appendChild(frag);
 }
 renderRecent([
-  { title: "Dune: Parte Dos",  genre: "drama",  image: "../media/imagen/dune2.WEBP",       description: "Paul y los Fremen cambian el destino de Arrakis.", type:"movie" },
-  { title: "Furiosa",          genre: "action", image: "../media/imagen/furiosa.jpg",      description: "La leyenda del Wasteland antes de Mad Max.", type:"movie" },
-  { title: "Wonka",            genre: "comedy", image: "../media/imagen/wonka.jpg",        description: "El origen del chocolatero más famoso.", type:"movie" },
-  { title: "Oppenheimer",      genre: "drama",  image: "../media/imagen/oppenheimer.jpg",  description: "El proyecto Manhattan y sus dilemas.", type:"movie" },
-  { title: "The Batman",       genre: "action", image: "../media/imagen/thebatman.jpg",    description: "Un detective oscuro acecha Gotham.", type:"movie" }
+  { title: "Dune: Parte Dos",  genre: "drama",  image: "./media/imagen/dune2.webp",       description: "Paul y los Fremen cambian el destino de Arrakis.", type:"movie" },
+  { title: "Furiosa",          genre: "action", image: "./media/imagen/furiosa.jpg",      description: "La leyenda del Wasteland antes de Mad Max.", type:"movie" },
+  { title: "Wonka",            genre: "comedy", image: "./media/imagen/wonka.jpg",        description: "El origen del chocolatero más famoso.", type:"movie" },
+  { title: "Oppenheimer",      genre: "drama",  image: "./media/imagen/oppenheimer.jpg",  description: "El proyecto Manhattan y sus dilemas.", type:"movie" },
+  { title: "The Batman",       genre: "action", image: "./media/imagen/thebatman.jpg",    description: "Un detective oscuro acecha Gotham.", type:"movie" }
 ]);
 
-// Series (grid clásico)
+// Series (grid)
 const seriesGrid = document.getElementById('series-grid');
 function renderSeries(list) {
   if (!seriesGrid) return;
@@ -533,7 +533,9 @@ function renderTopRated(list) {
       }
     };
     card.addEventListener('click', open);
-    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
     frag.appendChild(card);
   });
   topRatedGrid.innerHTML = '';
@@ -621,7 +623,7 @@ function goHome() {
 const backBtn = $('#btn-back-home');
 if (backBtn) backBtn.addEventListener('click', goHome);
 
-// Logo: limpia filtros y vuelve a home
+// Logo → limpia filtros y Home
 const logoImg = document.querySelector('.logo img');
 if (logoImg) {
   logoImg.addEventListener('click', () => {
@@ -650,8 +652,7 @@ window.addEventListener('popstate', () => {
 });
 
 /* --------------------------------
-   13) LOGIN (apertura modal + validación mínima) – LEGACY
-   * Se conserva tal cual para no cambiar comportamiento.
+   13) LOGIN (apertura modal + validación mínima)
 --------------------------------- */
 (() => {
   const btn   = document.getElementById('login-btn');
@@ -719,7 +720,6 @@ window.addEventListener('popstate', () => {
 
 /* --------------------------------
    13b) LOGIN SIMULADO (localStorage)
-   * Mantiene mismo comportamiento visual + estado persistente.
 --------------------------------- */
 const LOGIN_KEY   = 'streamio:isLoggedIn';
 const USER_KEY    = 'streamio:username';
@@ -735,7 +735,7 @@ const loginSubmit = document.getElementById('login-submit');
 function openLoginModal() { if (loginModal) { loginModal.setAttribute('aria-hidden', 'false'); inputUser?.focus(); } }
 function closeLoginModal() { if (loginModal) loginModal.setAttribute('aria-hidden', 'true'); }
 
-// Click fuera → cerrar (sin botón X)
+// Click fuera → cerrar
 if (loginModal) {
   loginModal.addEventListener('click', (e) => { if (e.target === loginModal) closeLoginModal(); });
 }
@@ -754,12 +754,12 @@ function setLoggedOutUI() {
   loginBtn.classList.remove('logged');
 }
 
-const USER_RE = /^[a-zA-Z0-9._-]{4,16}$/;
+const USER_RE2 = /^[a-zA-Z0-9._-]{4,16}$/;
 const PASS_MIN = 6;
 
 function validateUser2() {
   const v = (inputUser?.value || '').trim();
-  const ok = USER_RE.test(v);
+  const ok = USER_RE2.test(v);
   inputUser?.setAttribute('aria-invalid', ok ? 'false' : 'true');
   inputUser?.classList.toggle('input-error', !ok && v !== '');
   inputUser?.classList.toggle('input-ok', ok);
